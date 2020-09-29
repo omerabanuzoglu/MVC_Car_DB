@@ -1,0 +1,28 @@
+﻿@model Dbcar.Models.Entity.TblUrun
+@{
+    ViewBag.Title = "Getir";
+    Layout = "~/Views/Shared/_MainLayaout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Urun", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m=>m.UrunId)
+        @Html.TextBoxFor(m=>m.UrunId, new { @class="form-control"})
+        <br />
+        @Html.LabelFor(m=>m.UrunAd)
+        @Html.TextBoxFor(m=>m.UrunAd, new { @class="form-control"})
+        <br />
+        @Html.LabelFor(m=>m.UrunKategori)
+        @Html.TextBoxFor(m=>m.UrunKategori, new { @class="form-control"})
+        <br />
+        @Html.LabelFor(m=>m.Fiyat)
+        @Html.TextBoxFor(m=>m.Fiyat, new { @class="form-control"})
+        <br />
+        @Html.LabelFor(m=>m.Stok)
+        @Html.TextBoxFor(m=>m.Stok, new { @class="form-control"})
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}

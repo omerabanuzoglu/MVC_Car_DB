@@ -1,0 +1,25 @@
+﻿@model Dbcar.Models.Entity.TblMusteriler
+@{
+    ViewBag.Title = "YeniKayit";
+    Layout = "~/Views/Shared/_MainLayaout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div>
+        <label>Müşteri Adı</label>
+        @Html.TextBoxFor(m=>m.MusteriAd, new { @class="form-control"})
+        @Html.ValidationMessageFor(m=>m.MusteriAd, "", new { @style="color:red"})
+        <br />
+        <label>Müşteri Soyadı</label>
+        @Html.TextBoxFor(m=>m.MusteriSoyad, new { @class="form-control"})
+        @Html.ValidationMessageFor(m=>m.MusteriSoyad, "", new { @style="color:red"})
+    </div>
+    <div style="margin-top:20px;">
+        <button class="btn btn-info" id="btn1">Yeni Müşteri Ekle</button>
+    </div>
+    <script>
+        $('#btn1').click(function () {
+            alert('Müşteri Ekleme İşlemi Gerçekleştirildi.');
+        });
+    </script>
+</form>

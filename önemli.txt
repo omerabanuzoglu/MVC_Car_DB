@@ -1,0 +1,5 @@
+* Sayfamı Asp.Net MVC duyarlı şekilde tasarladım.
+* Sql server ile veri tabanı bağlantısı kuruldu.
+* 4 bölümden oluşmaktadır.(Kategoriler, Müşteriler, Ürünler, Satışlar)
+* Sayfalarda ayrı ayrı Silme, Güncelleme, Yeni Kayıt Ekleme ve 6 satırlı 
+satırda 2. 3. sayfalara geçme (pagedlist) işlemi uygulandı.

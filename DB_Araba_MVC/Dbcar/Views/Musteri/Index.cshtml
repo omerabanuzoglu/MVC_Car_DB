@@ -1,0 +1,35 @@
+﻿@using Dbcar.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TblMusteriler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayaout.cshtml";
+}
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Müşteri ID</th>
+        <th>Müşteri Adı</th>
+        <th>Müşteri Soyadı</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach (var mstr in Model)
+        {
+            <tr>
+                <th>@mstr.MusteriId</th>
+                <td>@mstr.MusteriAd</td>
+                <td>@mstr.MusteriSoyad</td>
+                <td><a href="/Musteri/Sil/@mstr.MusteriId" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Musteri/Getir/@mstr.MusteriId" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+
+<a href="/Musteri/YeniKayit/" class="btn btn-primary">Yeni Kayıt Oluştur</a>
+<br />

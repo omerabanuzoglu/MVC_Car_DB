@@ -1,0 +1,40 @@
+﻿@using Dbcar.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TblUrun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayaout.cshtml";
+}
+
+<br />
+<table class="table table-bordered">
+    <tr>
+        <th>Ürün ID</th>
+        <th>Ürün Adı</th>
+        <th>Ürün Kategori</th>
+        <th>Fiyat</th>
+        <th>Stok</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <th>@urn.UrunId</th>
+                <td>@urn.UrunAd</td>
+                <td>@urn.UrunKategori</td>
+                <td>@urn.Fiyat</td>
+                <td>@urn.Stok</td>
+                <td><a href="/Urun/Sil/@urn.UrunId" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Urun/Getir/@urn.UrunId" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@Html.PagedListPager((IPagedList)Model, sayfa=>Url.Action("Index", new { sayfa}))
+
+<a href="/Urun/YeniKayit/" class="btn btn-primary">Yeni Kayıt Oluştur</a>
+<br />

@@ -1,0 +1,22 @@
+﻿@model Dbcar.Models.Entity.TblMusteriler
+@{
+    ViewBag.Title = "Getir";
+    Layout = "~/Views/Shared/_MainLayaout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Musteri", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m=>m.MusteriId)
+        @Html.TextBoxFor(m=>m.MusteriId, new { @class="form-control"})
+        <br />
+        @Html.LabelFor(m=>m.MusteriAd)
+        @Html.TextBoxFor(m=>m.MusteriAd, new { @class="form-control"})
+        <br />
+        @Html.LabelFor(m=>m.MusteriSoyad)
+        @Html.TextBoxFor(m=>m.MusteriSoyad, new { @class="form-control"})
+    </div>
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
